@@ -1,0 +1,35 @@
+
+<!-- You are within a bootstrap <div class="row">YOUR CODE</div> -->
+<div class="col col-md-6">
+	<p class="note">Select a Node Version, system will use default installed (currently 0.10.25).</p>
+	<div class="form-group"><label>Select Version</label><select class="form-control" name="nvm_nodeversion">
+			<option>system</option>
+			<option value="0.10">0.10.*</option>
+			<option value="0.11">0.11.*</option>
+			<option value="0.12">0.12.*</option>
+			<option value="iojs">io.js (latest)</option>
+			<option value="4.4">4.4.*</option>
+			<option value="5">5.*</option>
+			<option value="6">6.*</option>
+		</select>
+	</div>
+</div>
+
+<script>
+// On Document Load Register plugin for events.
+$(function(){
+
+	// No prefill logic required, this field will be populated on its own.
+	CustomTest.registerPlugin( 'nvm', function(event,data){
+		switch( event ){
+			case 'prefill':
+				break;
+			// When the plugin is enabled/disabled. event is true|false
+			case 'enabled':
+				break;
+			case 'disabled':
+				break;
+		}
+	});
+})
+</script>
