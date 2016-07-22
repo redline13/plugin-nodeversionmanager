@@ -16,10 +16,12 @@ function plugin_install() {
 
 	## Shared NPM, against the grain but this is a different use case.
 	if [ ! -d /opt/nvm ]; then
-		git clone https://github.com/creationix/nvm.git /opt/nvm
-		mkdir /usr/local/nvm
-		mkdir /usr/local/node
-		cp $userHome/nvm.sh /etc/profile.d/
+		sudo git clone https://github.com/creationix/nvm.git /opt/nvm
+		sudo mkdir /usr/local/nvm
+		sudo chmod 777 /usr/local/nvm
+		sudo mkdir /usr/local/node
+		sudo chmod 777 /usr/local/node
+		sudo cp $userHome/nvm.sh /etc/profile.d/
 	fi
 
 	## Install NVM if not already on the box.
